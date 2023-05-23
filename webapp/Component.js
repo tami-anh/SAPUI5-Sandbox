@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"gvdpl/training/trainingApp/model/models"
+	"gvdpl/training/sandboxApp/model/models"
 ], function (UIComponent, Device, Models) {
 	"use strict";
 
-	return UIComponent.extend("gvdpl.training.trainingApp.Component", {
+	return UIComponent.extend("gvdpl.training.sandboxApp.Component", {
 
 		metadata: {
 			manifest: "json"

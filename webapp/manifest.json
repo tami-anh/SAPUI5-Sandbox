@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "gvdpl.training.trainingApp",
+		"id": "gvdpl.training.sandboxApp",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -14,7 +14,6 @@
 			"version": "1.38.11"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -31,11 +30,10 @@
 			"phone": true
 		}
 	},
-
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "gvdpl.training.trainingApp.view.App",
+			"viewName": "gvdpl.training.sandboxApp.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "App"
@@ -45,7 +43,8 @@
 			"libs": {
 				"sap.ui.layout": {},
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.f": {}
 			}
 		},
 		"contentDensities": {
@@ -56,37 +55,54 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "gvdpl.training.trainingApp.i18n.i18n"
+					"bundleName": "gvdpl.training.sandboxApp.i18n.i18n"
 				}
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
-				"routerClass": "sap.m.routing.Router",
+				"routerClass": "sap.f.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "gvdpl.training.trainingApp.view",
-				"controlAggregation": "pages",
-				"controlId": "app",
+				"viewPath": "gvdpl.training.sandboxApp.view",
+				"controlAggregation": "beginColumnPages",
+				"controlId": "fcl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteApp",
-				"pattern": "RouteApp",
-				"target": ["TargetApp"]
-			}],
+			"routes": [
+				{
+					"name": "master",
+					"pattern": "",
+					"target": [
+						"master"
+					]
+				},
+				{
+					"name": "detail",
+					"pattern": "detail",
+					"target": [
+						"master",
+						"detail"
+					]
+				}
+			],
 			"targets": {
-				"TargetApp": {
+				"master": {
 					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewId": "App",
-					"viewName": "App"
+					"viewName": "Master",
+					"controlAggregation": "beginColumnPages"
+				},
+				"detail": {
+					"viewType": "XML",
+					"viewName": "Detail",
+					"controlAggregation": "midColumnPages",
 				}
 			}
 		}

@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"gvdpl/training/trainingApp/test/integration/AllJourneys"
+		"gvdpl/training/sandboxApp/test/integration/AllJourneys"
 	], function () {
 		QUnit.start();
 	});

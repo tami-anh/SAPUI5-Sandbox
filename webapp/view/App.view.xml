@@ -1,41 +1,9 @@
-<mvc:View controllerName="gvdpl.training.trainingApp.controller.App" 
+<mvc:View controllerName="gvdpl.training.sandboxApp.controller.App" 
 xmlns="sap.m"
+xmlns:f="sap.f"
 xmlns:mvc="sap.ui.core.mvc" 
 displayBlock="true">
-	<Shell id="shell">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content>
-						<Table items="{path: 'MainModel>/results'}">
-							<columns>
-								<Column>
-									<Text text="Products"/>
-								</Column>
-								<Column>
-									<Text text="Supplier"/>
-								</Column>
-								<Column>
-									<Text text="Units in stock"/>
-								</Column>
-								<Column>
-									<Text text="Price"/>
-								</Column>
-							</columns>
-							<items>
-								<ColumnListItem vAlign="Middle">
-									<cells>
-										<Text text="{MainModel>ProductName}"/>
-										<Text text="{MainModel>SupplierID}"/>
-										<Text text="{MainModel>UnitsInStock}"/>
-										<Text text="{MainModel>UnitPrice}"/>
-									</cells>
-								</ColumnListItem>
-							</items>
-						</Table>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+	<App id="app">
+		<f:FlexibleColumnLayout id="fcl" layout="{LayoutModel>/layout}" />
+	</App>
 </mvc:View>

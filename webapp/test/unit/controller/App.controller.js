@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"gvdpl/training/trainingApp/controller/App.controller"
+	"gvdpl/training/sandboxApp/controller/App.controller"
 ], function (Controller) {
 	"use strict";
 

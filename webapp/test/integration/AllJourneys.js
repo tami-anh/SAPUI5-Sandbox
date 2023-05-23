@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "gvdpl.training.trainingApp.view.",
+		viewNamespace: "gvdpl.training.sandboxApp.view.",
 		autoWait: true
 	});
 });

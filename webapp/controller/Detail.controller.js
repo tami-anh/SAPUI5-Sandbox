@@ -3,9 +3,12 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("gvdpl.training.sandboxApp.controller.App", {
+	return Controller.extend("gvdpl.training.sandboxApp.controller.Detail", {
+
 		onInit: function () {
 
-		}
+		},
+
 	});
+
 });

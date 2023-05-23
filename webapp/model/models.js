@@ -10,6 +10,7 @@ sap.ui.define([
 			this.oComponent = oComponent;
 			this._createDeviceModel();
 			this._createMainModel();
+			this._createLayoutModel();
 		},
 		
 		_createMainModel: function() {
@@ -61,6 +62,13 @@ sap.ui.define([
 			});
 			
 			this.getComponent().setModel(oModel, "MainModel");
+		},
+		
+		_createLayoutModel: function() {
+			const oModel = new JSONModel({
+				layout: "OneColumn"
+			});
+			this.getComponent().setModel(oModel, "LayoutModel");
 		},
 
 		_createDeviceModel: function() {
