@@ -79,11 +79,15 @@ sap.ui.define([
 		
 		// GETTERS AND SETTERS
 		getMainModel: function() {
-			return this.oMainModel;
+			return this.getComponent().getModel("MainModel");
 		},
 		
-		setMainModel: function(oMainModel) {
-			this.oMainModel = oMainModel;
+		// setMainModel: function(oMainModel) {
+		// 	this.oMainModel = oMainModel;
+		// },
+		
+		getLayoutModel: function() {
+			return this.getComponent().getModel("LayoutModel");
 		},
 		
 		getComponent: function() {

@@ -102,7 +102,7 @@
 				"detail": {
 					"viewType": "XML",
 					"viewName": "Detail",
-					"controlAggregation": "midColumnPages",
+					"controlAggregation": "midColumnPages"
 				}
 			}
 		}

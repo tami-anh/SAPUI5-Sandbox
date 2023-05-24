@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"gvdpl/training/sandboxApp/util/Utils"
+], function (Controller, Utils) {
 	"use strict";
 
 	return Controller.extend("gvdpl.training.sandboxApp.controller.Master", {
@@ -8,7 +9,10 @@ sap.ui.define([
 		onInit: function () {
 
 		},
-
+		
+		handleValueSubmit:function(){
+			this.oRouter = this.getOwnerComponent().getRouter().navTo("detail", {});
+		}
 
 	});
 
