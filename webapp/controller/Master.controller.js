@@ -12,6 +12,10 @@ sap.ui.define([
 		
 		handleValueSubmit:function(){
 			this.oRouter = this.getOwnerComponent().getRouter().navTo("detail", {});
+		},
+		
+		onEmployeePress: function() {
+			
 		}
 
 	});

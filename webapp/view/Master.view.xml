@@ -3,6 +3,28 @@
 		<Page title="Title">
 			<content>
 				<Input submit="handleValueSubmit" />
+				<Table items="MainModel>/results" >
+					<columns>
+						<Column>
+							<Text text="Name" />
+						</Column>
+						<Column>
+							<Text text="Surname" />
+						</Column>
+						<Column>
+							<Text text="Pernr" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem vAlign="Middle" type="Active" press="onEmployeePress" >
+							<cells>
+								<Text text="abc" />
+								<Text text="abc" />
+								<Text text="abc" />
+							</cells>
+						</ColumnListItem>	
+					</items>
+				</Table>
 			</content>
 		</Page>
 </mvc:View>
