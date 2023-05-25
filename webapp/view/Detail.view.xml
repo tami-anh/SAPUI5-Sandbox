@@ -1,8 +1,63 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="gvdpl.training.sandboxApp.controller.Detail"
-	xmlns:html="http://www.w3.org/1999/xhtml">
-		<Page title="Title">
-			<content>
-				<Text text="hello" />
-			</content>
-		</Page>
+<mvc:View xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:m="sap.m" 
+	xmlns:f="sap.f"
+	xmlns="sap.uxap"
+	xmlns:form="sap.ui.layout.form"
+	controllerName="gvdpl.training.sandboxApp.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml" >
+		<m:Page title="Title">
+			<m:content>
+				<ObjectPageLayout>
+					<headerTitle>
+						<ObjectPageHeader 
+							objectImageURI="./gvdpl/training/sandboxApp/avatar.jpg"
+							objectTitle="Denise Smith"
+							objectImageShape="Circle"
+							objectImageAlt="Denise Smith"
+							objectSubtitle="Senior UI Developer"
+
+							isObjectTitleAlwaysVisible="true"
+							isObjectSubtitleAlwaysVisible="true">
+						</ObjectPageHeader>
+					</headerTitle>
+					<headerContent>
+					</headerContent>
+				</ObjectPageLayout>
+				<!--<form:SimpleForm-->
+				<!--	editable="true"-->
+				<!--	layout="ResponsiveGridLayout"-->
+				<!--	title="{i18n>personalData}"-->
+				<!--	labelSpanXL="3"-->
+				<!--	labelSpanL="3"-->
+				<!--	labelSpanM="3"-->
+				<!--	labelSpanS="12"-->
+				<!--	adjustLabelSpan="false"-->
+				<!--	emptySpanXL="4"-->
+				<!--	emptySpanL="4"-->
+				<!--	emptySpanM="4"-->
+				<!--	emptySpanS="0"-->
+				<!--	columnsXL="1"-->
+				<!--	columnsL="1"-->
+				<!--	columnsM="1"-->
+				<!--	singleContainerFullSize="false" >-->
+				<!--	<form:content>-->
+				<!--		<Label text="{i18n>empName}" />-->
+				<!--		<Input value="abc" />-->
+				<!--		<Label text="{i18n>empSurname}" />-->
+				<!--		<Input value="abc" />-->
+				<!--		<Label text="{i18n>empId}" />-->
+				<!--		<Input value="abc" />-->
+				<!--		<Label text="{i18n>empDateOfBirth}" />-->
+				<!--		<Input value="abc" />-->
+				<!--		<Label text="{i18n>empPlaceOfBirth}" />-->
+				<!--		<Input value="abc" />-->
+				<!--		<Label text="{i18n>empAddress}" />-->
+				<!--		<Input value="abc" />-->
+				<!--		<Label text="{i18n>empPostCode}" />-->
+				<!--		<Input value="abc" />-->
+				<!--	</form:content>-->
+				<!--</form:SimpleForm>-->
+			</m:content>
+		</m:Page>
 </mvc:View>
