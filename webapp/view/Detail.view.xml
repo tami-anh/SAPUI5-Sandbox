@@ -74,11 +74,13 @@
 								<ObjectPageSubSection>
 									<blocks>
 										<form:SimpleForm editable="false" layout="ColumnLayout">
-												<m:Label text="{i18n>empContractType}" design="Bold"/>
+												<m:Label text="{i18n>empEducation}" design="Bold"/>
 												<m:Text text="abc"/>
-												<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
+												<m:Label text="{i18n>empUniversityName}" design="Bold"/>
 												<m:Text text="abc"/>
-												<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
+												<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>
+												<m:Text text="abc"/>
+												<m:Label text="{i18n>empMajor}" design="Bold"/>
 												<m:Text text="abc"/>
 										</form:SimpleForm>
 									</blocks>
