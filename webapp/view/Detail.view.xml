@@ -37,14 +37,14 @@
 						</layout:HorizontalLayout>
 					</headerContent>
 					<sections>
-						<ObjectPageSection title="{i18n>it0006}" >
+						<ObjectPageSection title="IT0006" >
 							<subSections>
 								<ObjectPageSubSection>
 									<blocks>
 										<form:SimpleForm editable="false" layout="ColumnLayout">
 												<m:Label text="{i18n>empAddress}" design="Bold"/>
 												<m:Text text="abc"/>
-												<m:Label text="{i18n>empPostCod}" design="Bold"/>
+												<m:Label text="{i18n>empPostCode}" design="Bold"/>
 												<m:Text text="abc"/>
 												<m:Label text="{i18n>empPostSpot}" design="Bold"/>
 												<m:Text text="abc"/>
@@ -53,8 +53,37 @@
 								</ObjectPageSubSection>
 							</subSections>
 						</ObjectPageSection>
-						<ObjectPageSection>
-							
+						<ObjectPageSection title="IT0016">
+							<subSections>
+								<ObjectPageSubSection>
+									<blocks>
+										<form:SimpleForm editable="false" layout="ColumnLayout">
+												<m:Label text="{i18n>empContractType}" design="Bold"/>
+												<m:Text text="abc"/>
+												<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
+												<m:Text text="abc"/>
+												<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
+												<m:Text text="abc"/>
+										</form:SimpleForm>
+									</blocks>
+								</ObjectPageSubSection>
+							</subSections>
+						</ObjectPageSection>
+						<ObjectPageSection title="IT0022">
+							<subSections>
+								<ObjectPageSubSection>
+									<blocks>
+										<form:SimpleForm editable="false" layout="ColumnLayout">
+												<m:Label text="{i18n>empContractType}" design="Bold"/>
+												<m:Text text="abc"/>
+												<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
+												<m:Text text="abc"/>
+												<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
+												<m:Text text="abc"/>
+										</form:SimpleForm>
+									</blocks>
+								</ObjectPageSubSection>
+							</subSections>
 						</ObjectPageSection>
 					</sections>
 				</ObjectPageLayout>
