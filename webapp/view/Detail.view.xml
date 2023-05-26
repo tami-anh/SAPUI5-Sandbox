@@ -3,6 +3,7 @@
 	xmlns:m="sap.m" 
 	xmlns:f="sap.f"
 	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
 	xmlns:form="sap.ui.layout.form"
 	controllerName="gvdpl.training.sandboxApp.controller.Detail"
 	xmlns:html="http://www.w3.org/1999/xhtml" >
@@ -22,7 +23,40 @@
 						</ObjectPageHeader>
 					</headerTitle>
 					<headerContent>
+						<layout:HorizontalLayout>
+							<m:Label text="{i18n>empName}" />
+							<m:Input value="abc" />
+							<m:Label text="{i18n>empSurname}" />
+							<m:Input value="abc" />
+							<m:Label text="{i18n>empId}" />
+							<m:Input value="abc" />
+							<m:Label text="{i18n>empDateOfBirth}" />
+							<m:Input value="abc" />
+							<m:Label text="{i18n>empPlaceOfBirth}" />
+							<m:Input value="abc" />
+						</layout:HorizontalLayout>
 					</headerContent>
+					<sections>
+						<ObjectPageSection title="{i18n>it0006}" >
+							<subSections>
+								<ObjectPageSubSection>
+									<blocks>
+										<form:SimpleForm editable="false" layout="ColumnLayout">
+												<m:Label text="{i18n>empAddress}" design="Bold"/>
+												<m:Text text="abc"/>
+												<m:Label text="{i18n>empPostCod}" design="Bold"/>
+												<m:Text text="abc"/>
+												<m:Label text="{i18n>empPostSpot}" design="Bold"/>
+												<m:Text text="abc"/>
+										</form:SimpleForm>
+									</blocks>
+								</ObjectPageSubSection>
+							</subSections>
+						</ObjectPageSection>
+						<ObjectPageSection>
+							
+						</ObjectPageSection>
+					</sections>
 				</ObjectPageLayout>
 				<!--<form:SimpleForm-->
 				<!--	editable="true"-->
