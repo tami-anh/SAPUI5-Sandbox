@@ -6,12 +6,12 @@ sap.ui.define([
 		readMainModel: function() {
 			const sPath = "/EmployeeSet";
 			const sService = "/sap/opu/odata/sap/ZKBU_PROFILE_SRV";
-			const oModel = new oDataModel(sService);
+			const oModel = new ODataModel(sService);
 
 			return new Promise(function (resolve, reject) {
 				oModel.read(sPath, {
 					urlParameters: {
-						"$expand": "Details"
+						"$expand": "ObjectsDetails"
 					},
 					success: function(oData, oResponse) {
 						resolve(oData);

@@ -1,6 +1,15 @@
 {
   "welcomeFile": "/webapp/index.html",
   "routes": [
+  	{
+		"path": "/sap/opu/odata",
+		"target": {
+			"type": "destination",
+			"name": "ES4",
+			"entryPath": "/sap/opu/odata"
+		},
+		"description": "SAP Backend"
+	},
     {
       "path": "/resources",
       "target": {
