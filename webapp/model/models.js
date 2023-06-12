@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/Device"
-], function (JSONModel, Device) {
+	"sap/ui/Device",
+	"gvdpl/training/sandboxApp/util/DataManager"
+], function (JSONModel, Device, DataManager) {
 	"use strict";
 
 	return {
@@ -13,54 +14,16 @@ sap.ui.define([
 			this._createLayoutModel();
 		},
 		
+		downloadMainModel: async function() {
+			const oModels = this;
+			var oMainModel = oModels.getMainModel();
+			const oData = await DataManager.readMainModel();
+			oMainModel.setProperty("/", oData);
+			return oMainModel;
+		},
+		
 		_createMainModel: function() {
-			const oModel = new JSONModel({
-				results: [
-					{
-						"ProductID": 1,
-						"ProductName": "Chai",
-						"UnitsInStock": 39,
-						"UnitsOnOrder": 10,
-						"UnitPrice": 8,
-						"SupplierID": 1,
-						"Discontinued": false,
-						"Supplier": {
-						  "__deferred": {
-						    "uri": "/destinations/northwind/V2/Northwind/Northwind.svc/Products(1)/Supplier"
-						  }
-						}
-					},
-					{
-						"ProductID": 2,
-						"ProductName": "Chang",
-						"UnitsInStock": 81,
-						"UnitsOnOrder": 7,
-						"UnitPrice": 6,
-						"SupplierID": 1,
-						"Discontinued": true,
-						"Supplier": {
-						  "__deferred": {
-						    "uri": "/destinations/northwind/V2/Northwind/Northwind.svc/Products(2)/Supplier"
-						  }
-						}
-					},
-					{
-						"ProductID": 3,
-						"ProductName": "Aniseed Syrup",
-						"UnitsInStock": 100,
-						"UnitsOnOrder": 6,
-						"UnitPrice": 3,
-						"SupplierID": 3,
-						"Discontinued": false,
-						"Supplier": {
-						  "__deferred": {
-						    "uri": "/destinations/northwind/V2/Northwind/Northwind.svc/Products(3)/Supplier"
-						  }
-						}
-					}
-				]
-			});
-			
+			const oModel = new JSONModel({});                    
 			this.getComponent().setModel(oModel, "MainModel");
 		},
 		

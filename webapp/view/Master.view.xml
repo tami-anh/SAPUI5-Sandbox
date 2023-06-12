@@ -2,7 +2,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 		<Page title="Title">
 			<content>
-				<Table items="MainModel>/results" >
+				<Table items="{MainModel>/results}" >
 					<columns>
 						<Column>
 							<Text text="Name" />
@@ -17,9 +17,9 @@
 					<items>
 						<ColumnListItem vAlign="Middle" type="Active" press="onEmployeePress" >
 							<cells>
-								<Text text="abc" />
-								<Text text="abc" />
-								<Text text="abc" />
+								<Text text="{path: 'MainModel>Vorna'}" />
+								<Text text="{path: 'MainModel>Nachn'}" />
+								<Text text="{path: 'MainModel>Pernr'}" />
 							</cells>
 						</ColumnListItem>	
 					</items>
