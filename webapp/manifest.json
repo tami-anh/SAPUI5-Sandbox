@@ -86,7 +86,7 @@
 				},
 				{
 					"name": "detail",
-					"pattern": "detail/{ctx}",
+					"pattern": "detail/{pernr}",
 					"target": [
 						"master",
 						"detail"

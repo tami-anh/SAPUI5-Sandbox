@@ -28,8 +28,12 @@ sap.ui.define([
 		
 		
 		onEmployeePress: function(oEvent) {
+			const oController = this;
+			const oMainModel = oController.getView().getModel("MainModel");
 			const oContext = oEvent.getSource().getBindingContext("MainModel");
-			this.oRouter = this.getOwnerComponent().getRouter().navTo("detail", {ctx: "key"});
+			const sPath = oContext.sPath;
+			const sPernr = oMainModel.getProperty(sPath).Pernr;
+			this.oRouter = this.getOwnerComponent().getRouter().navTo("detail", {pernr: sPernr});
 			
 		}
 

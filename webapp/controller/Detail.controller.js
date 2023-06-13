@@ -14,10 +14,10 @@ sap.ui.define([
 		},
 		
 		_handleRouteMatched: function(oEvent) {
-			const oView = this.getView();
-			const oContext = oEvent.getParameter("arguments").ctx;
-			oView.setBindingContext(oContext);
-			debugger;
+			const oController = this;
+			const oView = oController.getView();
+			const sPernr = oEvent.getParameter("arguments").pernr;
+			const oDetailsData = Models.downloadDetailsModel();
 		}
 
 	});
