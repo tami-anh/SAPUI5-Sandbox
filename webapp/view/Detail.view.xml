@@ -43,11 +43,11 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empContractType}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{MainModel>ObjectsDetails/RodzajUmowy}"/>
 								<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{MainModel>ObjectsDetails/DataZawUmow}"/>
 								<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{MainModel>ObjectsDetails/DataKonUmow}"/>
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>
@@ -59,13 +59,13 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empEducation}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{MainModel>ObjectsDetails/Wyksztalcenie}"/>
 								<m:Label text="{i18n>empUniversityName}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{MainModel>ObjectsDetails/NazwaSzkoly}"/>
 								<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{MainModel>ObjectsDetails/DataUkonSzkol}"/>
 								<m:Label text="{i18n>empMajor}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{MainModel>ObjectsDetails/KierunNaukTxt}"/>
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>

@@ -27,8 +27,10 @@ sap.ui.define([
 		},
 		
 		
-		onEmployeePress: function() {
-			this.oRouter = this.getOwnerComponent().getRouter().navTo("detail", {});
+		onEmployeePress: function(oEvent) {
+			const oContext = oEvent.getSource().getBindingContext("MainModel");
+			this.oRouter = this.getOwnerComponent().getRouter().navTo("detail", {ctx: "key"});
+			
 		}
 
 	});
