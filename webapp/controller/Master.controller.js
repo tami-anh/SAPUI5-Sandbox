@@ -11,6 +11,7 @@ sap.ui.define([
 
 		onInit: async function () {
 			const oController = this;
+			this.oRouter = this.getOwnerComponent().getRouter();
 			
 			try{
 				await Promise.all([
@@ -26,15 +27,13 @@ sap.ui.define([
 			}
 		},
 		
-		
 		onEmployeePress: function(oEvent) {
 			const oController = this;
 			const oMainModel = oController.getView().getModel("MainModel");
 			const oContext = oEvent.getSource().getBindingContext("MainModel");
 			const sPath = oContext.sPath;
 			const sPernr = oMainModel.getProperty(sPath).Pernr;
-			this.oRouter = this.getOwnerComponent().getRouter().navTo("detail", {pernr: sPernr});
-			
+			this.oRouter.navTo("detail", {pernr: sPernr});
 		}
 
 	});

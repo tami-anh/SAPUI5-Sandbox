@@ -23,8 +23,8 @@ sap.ui.define([
 			});
 		},
 		
-		readEmployeeDetails: function() {
-			const sPath = "/DetailsSet('11111111')";
+		readEmployeeDetails: function(sPernr) {
+			const sPath = "/DetailsSet('" + sPernr + "')";
 			const sService = "/sap/opu/odata/sap/ZKBU_PROFILE_SRV";
 			const oModel = new ODataModel(sService);
 			

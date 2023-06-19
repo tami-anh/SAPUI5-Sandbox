@@ -2,22 +2,32 @@
 	xmlns:form="sap.ui.layout.form" controllerName="gvdpl.training.sandboxApp.controller.Detail" xmlns:html="http://www.w3.org/1999/xhtml">
 	<ObjectPageLayout>
 		<headerTitle>
-			<ObjectPageHeader objectImageURI="{value: 'gvdpl/training/sandboxApp/image/avatar.jpg', formatter: 'sap.ui.require.toUrl'}"
-				objectTitle="Denise Smith" objectImageShape="Circle" objectImageAlt="Denise Smith" objectSubtitle="Senior UI Developer"
-				isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true"></ObjectPageHeader>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Denise Smith" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
+				<snappedHeading>
+					
+				</snappedHeading>
+				<navigationActions>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" tooltip="Enter Full Screen Mode" visible="true"/>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" tooltip="Exit Full Screen Mode" visible="true"/>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close column" visible="true"/>
+				</navigationActions>
+			</ObjectPageDynamicHeaderTitle>
+			<!--<ObjectPageHeader objectImageURI="{value: 'gvdpl/training/sandboxApp/image/avatar.jpg', formatter: 'sap.ui.require.toUrl'}"-->
+			<!--	objectTitle="Denise Smith" objectImageShape="Circle" objectImageAlt="Denise Smith" objectSubtitle="Senior UI Developer"-->
+			<!--	isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true">-->
+			<!--</ObjectPageHeader>-->
 		</headerTitle>
 		<headerContent>
 			<layout:HorizontalLayout>
-				<m:Label text="{i18n>empName}"/>
-				<m:Input value="abc"/>
-				<m:Label text="{i18n>empSurname}"/>
-				<m:Input value="abc"/>
 				<m:Label text="{i18n>empId}"/>
-				<m:Input value="abc"/>
+				<m:Text text="abc"/>
 				<m:Label text="{i18n>empDateOfBirth}"/>
-				<m:Input value="abc"/>
+				<m:Text text="abc"/>
 				<m:Label text="{i18n>empPlaceOfBirth}"/>
-				<m:Input value="abc"/>
+				<m:Text text="abc"/>
 			</layout:HorizontalLayout>
 		</headerContent>
 		<sections>
@@ -27,11 +37,11 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empAddress}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{DetailsModel>/Address}"/>
 								<m:Label text="{i18n>empPostCode}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{DetailsModel>/KodPocztowy}"/>
 								<m:Label text="{i18n>empPostSpot}" design="Bold"/>
-								<m:Text text="abc"/>
+								<m:Text text="{DetailsModel>/MiejscPoczt}"/>
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>

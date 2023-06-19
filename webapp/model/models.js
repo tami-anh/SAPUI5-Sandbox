@@ -13,6 +13,7 @@ sap.ui.define([
 			this._createMainModel();
 			this._createLayoutModel();
 			this._createDetailsModel();
+			this._createScreenModeModel();
 		},
 		
 		downloadMainModel: async function() {
@@ -23,10 +24,10 @@ sap.ui.define([
 			return oMainModel;
 		},
 		
-		downloadDetailsModel: async function() {
+		downloadDetailsModel: async function(sPernr) {
 			const oModels = this;
 			const oDetailsModel = oModels.getDetailsModel();
-			const oData = await DataManager.readEmployeeDetails();
+			const oData = await DataManager.readEmployeeDetails(sPernr);
 			oDetailsModel.setProperty("/", oData);
 			return oDetailsModel;
 		},
@@ -54,6 +55,11 @@ sap.ui.define([
 			this.getComponent().setModel(oModel, "device");
 		},
 		
+		_createScreenModeModel: function() {
+			const oModel = new JSONModel({});                    
+			this.getComponent().setModel(oModel, "ScreenModeModel");
+		},
+		
 		// GETTERS AND SETTERS
 		getMainModel: function() {
 			return this.getComponent().getModel("MainModel");
@@ -61,6 +67,10 @@ sap.ui.define([
 		
 		getDetailsModel: function() {
 			return this.getComponent().getModel("DetailsModel");
+		},
+		
+		getScreenModeModel: function() {
+			return this.getComponent().getModel("ScreenModeModel");
 		},
 		
 		// setMainModel: function(oMainModel) {
