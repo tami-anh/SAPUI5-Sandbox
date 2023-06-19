@@ -19,11 +19,15 @@ sap.ui.define([
 		
 		handleFullScreen: function () {
 			const oLayoutModel = Models.getLayoutModel();
+			const oScreenModeModel = Models.getScreenModeModel();
+			oScreenModeModel.setProperty("/isFullScreen", true);
 			oLayoutModel.setProperty("/layout", "MidColumnFullScreen");
 		},
 		
 		handleExitFullScreen: function () {
 			const oLayoutModel = Models.getLayoutModel();
+			const oScreenModeModel = Models.getScreenModeModel();
+			oScreenModeModel.setProperty("/isFullScreen", false);
 			oLayoutModel.setProperty("/layout", "TwoColumnsMidExpanded");
 		},
 		

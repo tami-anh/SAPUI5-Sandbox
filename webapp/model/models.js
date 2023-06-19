@@ -56,7 +56,9 @@ sap.ui.define([
 		},
 		
 		_createScreenModeModel: function() {
-			const oModel = new JSONModel({});                    
+			const oModel = new JSONModel({
+				isFullScreen: false
+			});                    
 			this.getComponent().setModel(oModel, "ScreenModeModel");
 		},
 		
