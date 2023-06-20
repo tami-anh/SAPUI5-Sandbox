@@ -4,16 +4,28 @@
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
-					<m:Title text="Denise Smith" wrapping="true" class="sapUiSmallMarginEnd"/>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center" class="sapUiSmallMarginEnd">
+						<m:Title text="Denise Smith" wrapping="true" class="sapUiSmallMarginEnd"/>
+					</m:FlexBox>
+					
 				</expandedHeading>
 				<snappedHeading>
-					
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center" class="sapUiSmallMarginEnd">
+						<f:Avatar src="gvdpl/training/sandboxApp/image/avatar.jpg" displaySize="S" displayShape="Circle" class="sapUiSmallMarginEnd" />
+						<m:Title text="Denise Smith" wrapping="true" class="sapUiSmallMarginEnd"/>
+					</m:FlexBox>
 				</snappedHeading>
+				
 				<navigationActions>
 					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" tooltip="Enter Full Screen Mode" visible="{= ${ScreenModeModel>/isFullScreen} === false}"/>
 					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" tooltip="Exit Full Screen Mode" visible="{= ${ScreenModeModel>/isFullScreen} === true}"/>
 					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close column" visible="true"/>
 				</navigationActions>
+				
+				<actions>
+					<m:Button text="Edit" type="Emphasized" press="toggleAreaPriority"/>
+				</actions>
+				
 			</ObjectPageDynamicHeaderTitle>
 			<!--<ObjectPageHeader objectImageURI="{value: 'gvdpl/training/sandboxApp/image/avatar.jpg', formatter: 'sap.ui.require.toUrl'}"-->
 			<!--	objectTitle="Denise Smith" objectImageShape="Circle" objectImageAlt="Denise Smith" objectSubtitle="Senior UI Developer"-->
@@ -21,14 +33,21 @@
 			<!--</ObjectPageHeader>-->
 		</headerTitle>
 		<headerContent>
-			<layout:HorizontalLayout>
-				<m:Label text="{i18n>empId}"/>
-				<m:Text text="abc"/>
-				<m:Label text="{i18n>empDateOfBirth}"/>
-				<m:Text text="abc"/>
-				<m:Label text="{i18n>empPlaceOfBirth}"/>
-				<m:Text text="abc"/>
-			</layout:HorizontalLayout>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch" >
+				<f:Avatar src="gvdpl/training/sandboxApp/image/avatar.jpg" displaySize="L" displayShape="Circle" class="sapUiSmallMarginEnd" />
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
+					<m:Label text="{i18n>empId}"/>
+					<m:Text text="{MainModel>Pernr}"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="{i18n>empDateOfBirth}"/>
+					<m:Text text="abc"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="{i18n>empPlaceOfBirth}"/>
+					<m:Text text="abc"/>
+				</m:VBox>
+			</m:FlexBox>
 		</headerContent>
 		<sections>
 			<ObjectPageSection title="IT0006">
