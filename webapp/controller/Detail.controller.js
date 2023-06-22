@@ -1,11 +1,14 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"gvdpl/training/sandboxApp/model/models",
-], function (Controller, Models) {
+	"gvdpl/training/sandboxApp/util/Formatter",
+], function (Controller, Models, Formatter) {
 	"use strict";
 
 	return Controller.extend("gvdpl.training.sandboxApp.controller.Detail", {
-
+		
+		formatter: Formatter,
+		
 		onInit: function() {
 			this.oRouter = this.getOwnerComponent().getRouter();
 			this.oRouter.getRoute("detail").attachPatternMatched(this._handleRouteMatched, this);
