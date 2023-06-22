@@ -37,7 +37,7 @@
 				<f:Avatar src="gvdpl/training/sandboxApp/image/avatar.jpg" displaySize="L" displayShape="Circle" class="sapUiSmallMarginEnd" />
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
 					<m:Label text="{i18n>empId}"/>
-					<m:Text text="{MainModel>/results/Pernr}"/>
+					<m:Text text="{MainModel>/Pernr}"/>
 				</m:VBox>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 					<m:Label text="{i18n>empDateOfBirth}"/>
@@ -72,7 +72,7 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empContractType}" design="Bold"/>
-								<m:Text text="{DetailsModel>/RodzajUmowy}"/>
+								<m:Text text="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>
 								<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
 								<m:Text text="{path: 'DetailsModel>/DataZawUmow', formatter: '.formatter.formatDate'}"/>
 								<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
@@ -88,7 +88,7 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empEducation}" design="Bold"/>
-								<m:Text text="{DetailsModel>/Wyksztalcenie}"/>
+								<m:Text text="{DetailsModel>/WyksztalcenieTxt}"/>
 								<m:Label text="{i18n>empUniversityName}" design="Bold"/>
 								<m:Text text="{DetailsModel>/NazwaSzkoly}"/>
 								<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>

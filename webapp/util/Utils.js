@@ -20,5 +20,14 @@ sap.ui.define([],
             	if(sValue == 0) return true;
             	return false;
 			},
+			
+			getText: function(sText){
+				const oI18nModel = new sap.ui.model.resource.ResourceModel({
+				    	bundleName: "gvdpl.training.sandboxApp.i18n.i18n"
+				});
+				
+				const oTextResourceBundle = oI18nModel.getResourceBundle();
+				return oTextResourceBundle.getText(sText);
+			}
 		};
 	});

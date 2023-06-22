@@ -15,7 +15,9 @@ sap.ui.define([
 				return dd + '.' + mm + '.' + yyyy;
 			},
 			
-			
+			formatContract: function(sContract) {
+				return Utils.getText("contractFor") + " " + sContract;
+			}
 
 		};
 	});
