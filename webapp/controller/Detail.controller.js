@@ -38,7 +38,7 @@ sap.ui.define([
 			const oController = this;
 			const oMainModel = Models.getMainModel();
 			const sId = oEvent.getParameter("arguments").id;
-			const sPernr = oMainModel.getData().results[sId].Pernr
+			const sPernr = oMainModel.getData().results[sId].Pernr;
 			const oDetailsData = Models.downloadDetailsModel(sPernr);
 			const oLayoutModel = Models.getLayoutModel();
 			oLayoutModel.setProperty("/layout", "TwoColumnsMidExpanded");
