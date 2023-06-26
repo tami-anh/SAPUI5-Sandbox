@@ -36,11 +36,17 @@ sap.ui.define([
 		
 		_handleRouteMatched: function(oEvent) {
 			const oController = this;
-			const oView = oController.getView();
-			const sPernr = oEvent.getParameter("arguments").pernr;
+			const oMainModel = Models.getMainModel();
+			const sId = oEvent.getParameter("arguments").id;
+			const sPernr = oMainModel.getData().results[sId].Pernr
 			const oDetailsData = Models.downloadDetailsModel(sPernr);
 			const oLayoutModel = Models.getLayoutModel();
 			oLayoutModel.setProperty("/layout", "TwoColumnsMidExpanded");
+			
+			//Bindowanie z mainModelu w ramach praktyki
+			const oFlexBox = oController.byId("flexBox");
+			oFlexBox.bindElement({ path: "/results/" + sId, model: "MainModel" });
+			
 		}
 
 	});

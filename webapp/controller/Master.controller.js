@@ -32,8 +32,9 @@ sap.ui.define([
 			const oMainModel = oController.getView().getModel("MainModel");
 			const oContext = oEvent.getSource().getBindingContext("MainModel");
 			const sPath = oContext.sPath;
-			const sPernr = oMainModel.getProperty(sPath).Pernr;
-			this.oRouter.navTo("detail", {pernr: sPernr});
+			const sId = sPath.split("/")[2];
+			//const sPernr = oMainModel.getProperty(sPath).Pernr;
+			this.oRouter.navTo("detail", {id: sId});
 		}
 
 	});

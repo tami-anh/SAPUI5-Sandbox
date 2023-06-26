@@ -33,11 +33,11 @@
 			<!--</ObjectPageHeader>-->
 		</headerTitle>
 		<headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch" >
+			<m:FlexBox id="flexBox" wrap="Wrap" fitContainer="true" alignItems="Stretch" >
 				<f:Avatar src="gvdpl/training/sandboxApp/image/avatar.jpg" displaySize="L" displayShape="Circle" class="sapUiSmallMarginEnd" />
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
 					<m:Label text="{i18n>empId}"/>
-					<m:Text text="{MainModel>/Pernr}"/>
+					<m:Text id="pernrText" text="{MainModel>Pernr}"/>
 				</m:VBox>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 					<m:Label text="{i18n>empDateOfBirth}"/>
