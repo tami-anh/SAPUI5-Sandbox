@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/core/Control"
 ], function (Control) {
 	"use strict";
-	return Control.extend("gvdpl.training.sandboxApp.controler.InputText", {
+	return Control.extend("gvdpl.training.sandboxApp.controls.InputText", {
 		metadata: {
 			properties: {
 					editMode: {type: "boolean", defaultValue: false}
@@ -20,8 +20,8 @@ sap.ui.define([
 			}
 		},
 		
-		_get_Text(){ 	return this.getAggregation("_Text");	},
-		_get_Input(){ 	return this.getAggregation("_Input");	},
+		_get_Text: function (){ 	return this.getAggregation("_Text");	},
+		_get_Input: function(){ 	return this.getAggregation("_Input");	},
 		
 		init: function () {
 		},
@@ -30,18 +30,18 @@ sap.ui.define([
 			// oRm.write("<div");
 			// 	oRm.writeControlData(oControl);
 			// 	oRm.writeStyles();
-			// 	oRm.writeClasses();
+			// // 	oRm.writeClasses();
 			// oRm.write(">");
 				
 				// oRm.write("<div");
 			if(oControl.getEditMode()) {
-				oRm.renderControl(oControl._get_Text());
-			} else {
 				oRm.renderControl(oControl._get_Input());
+			} else {
+				oRm.renderControl(oControl._get_Text());
 			}
 			// 	oRm.write(">");
 				
-			// 	oRm.write("</div>");
+				// oRm.write("</div>");
 			
 			// oRm.write("</div>");
 		}

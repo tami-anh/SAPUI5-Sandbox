@@ -64,8 +64,7 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empAddress}" design="Bold"/>
-								<gvd:InputText editMode="true" />
-								<!--<m:Text value="{DetailsModel>/Address}" />-->
+								<m:Text value="{DetailsModel>/Address}" />
 								<m:Label text="{i18n>empPostCode}" design="Bold"/>
 								<m:Text text="{DetailsModel>/KodPocztowy}"/>
 								<m:Label text="{i18n>empPostSpot}" design="Bold"/>
@@ -111,38 +110,4 @@
 			</ObjectPageSection>
 		</sections>
 	</ObjectPageLayout>
-	<!--<form:SimpleForm-->
-	<!--	editable="true"-->
-	<!--	layout="ResponsiveGridLayout"-->
-	<!--	title="{i18n>personalData}"-->
-	<!--	labelSpanXL="3"-->
-	<!--	labelSpanL="3"-->
-	<!--	labelSpanM="3"-->
-	<!--	labelSpanS="12"-->
-	<!--	adjustLabelSpan="false"-->
-	<!--	emptySpanXL="4"-->
-	<!--	emptySpanL="4"-->
-	<!--	emptySpanM="4"-->
-	<!--	emptySpanS="0"-->
-	<!--	columnsXL="1"-->
-	<!--	columnsL="1"-->
-	<!--	columnsM="1"-->
-	<!--	singleContainerFullSize="false" >-->
-	<!--	<form:content>-->
-	<!--		<Label text="{i18n>empName}" />-->
-	<!--		<Input value="abc" />-->
-	<!--		<Label text="{i18n>empSurname}" />-->
-	<!--		<Input value="abc" />-->
-	<!--		<Label text="{i18n>empId}" />-->
-	<!--		<Input value="abc" />-->
-	<!--		<Label text="{i18n>empDateOfBirth}" />-->
-	<!--		<Input value="abc" />-->
-	<!--		<Label text="{i18n>empPlaceOfBirth}" />-->
-	<!--		<Input value="abc" />-->
-	<!--		<Label text="{i18n>empAddress}" />-->
-	<!--		<Input value="abc" />-->
-	<!--		<Label text="{i18n>empPostCode}" />-->
-	<!--		<Input value="abc" />-->
-	<!--	</form:content>-->
-	<!--</form:SimpleForm>-->
 </mvc:View>
