@@ -8,7 +8,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:gvd="gvdpl.training.sandboxApp.controls"
 	controllerName="gvdpl.training.sandboxApp.controller.Detail">
-	<ObjectPageLayout id="displayPageLayout">
+	<ObjectPageLayout id="gvdPageLayout">
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
@@ -31,7 +31,7 @@
 				</navigationActions>
 				
 				<actions>
-					<m:Button text="Edit" type="Emphasized" press="onEditModePressAsync"/>
+					<m:Button text="Edit" type="Emphasized" press="onEditModePress"/>
 				</actions>
 				
 			</ObjectPageDynamicHeaderTitle>
@@ -58,9 +58,9 @@
 			</m:FlexBox>
 		</headerContent>
 		<sections>
-			<ObjectPageSection title="IT0006">
+			<ObjectPageSection>
 				<subSections>
-					<ObjectPageSubSection>
+					<ObjectPageSubSection title="IT0006">
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empAddress}" design="Bold"/>
@@ -72,11 +72,7 @@
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection title="IT0016">
-				<subSections>
-					<ObjectPageSubSection>
+					<ObjectPageSubSection title="IT0016">
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empContractType}" design="Bold"/>
@@ -88,11 +84,7 @@
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection title="IT0022">
-				<subSections>
-					<ObjectPageSubSection>
+					<ObjectPageSubSection title="IT0022">
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empEducation}" design="Bold"/>
@@ -107,7 +99,41 @@
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
-			</ObjectPageSection>
+			</ObjectPageSection>	
+			<!--<ObjectPageSection title="IT0016">-->
+			<!--	<subSections>-->
+			<!--		<ObjectPageSubSection>-->
+			<!--			<blocks>-->
+			<!--				<form:SimpleForm editable="false" layout="ColumnLayout">-->
+			<!--					<m:Label text="{i18n>empContractType}" design="Bold"/>-->
+			<!--					<m:Text text="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>-->
+			<!--					<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>-->
+			<!--					<m:Text text="{path: 'DetailsModel>/DataZawUmow', formatter: '.formatter.formatDate'}"/>-->
+			<!--					<m:Label text="{i18n>empContractDateTo}" design="Bold"/>-->
+			<!--					<m:Text text="{path: 'DetailsModel>/DataKonUmow', formatter: '.formatter.formatDate'}"/>-->
+			<!--				</form:SimpleForm>-->
+			<!--			</blocks>-->
+			<!--		</ObjectPageSubSection>-->
+			<!--	</subSections>-->
+			<!--</ObjectPageSection>-->
+			<!--<ObjectPageSection title="IT0022">-->
+			<!--	<subSections>-->
+			<!--		<ObjectPageSubSection>-->
+			<!--			<blocks>-->
+			<!--				<form:SimpleForm editable="false" layout="ColumnLayout">-->
+			<!--					<m:Label text="{i18n>empEducation}" design="Bold"/>-->
+			<!--					<m:Text text="{DetailsModel>/WyksztalcenieTxt}"/>-->
+			<!--					<m:Label text="{i18n>empUniversityName}" design="Bold"/>-->
+			<!--					<m:Text text="{DetailsModel>/NazwaSzkoly}"/>-->
+			<!--					<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>-->
+			<!--					<m:Text text="{path: 'DetailsModel>/DataUkonSzkol', formatter: '.formatter.formatDate'}"/>-->
+			<!--					<m:Label text="{i18n>empMajor}" design="Bold"/>-->
+			<!--					<m:Text text="{DetailsModel>/KierunNaukTxt}"/>-->
+			<!--				</form:SimpleForm>-->
+			<!--			</blocks>-->
+			<!--		</ObjectPageSubSection>-->
+			<!--	</subSections>-->
+			<!--</ObjectPageSection>-->
 		</sections>
 	</ObjectPageLayout>
 </mvc:View>

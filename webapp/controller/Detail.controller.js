@@ -15,25 +15,20 @@ sap.ui.define([
 			this.oRouter.getRoute("detail").attachPatternMatched(this._handleRouteMatched, this);
 		},
 		
-		onEditModePressAsync: async function() {
+		onEditModePress:  function() {
 			const oController = this;
 			const oDisplayPageLayout = oController.byId("displayPageLayout");
 			oDisplayPageLayout.setVisible(false);
 			
 			if(!oController.oEditPageLayout) {
-				oController.oEditPageLayout = await Fragment.load({
-					name: "gvdpl.training.sandboxApp.view.fragments.EditPageLayout",
-					controller: oController,
-					addToDependents: false
+				oController.oEditPageLayout = this.loadFragment({
+					name: "gvdpl.training.sandboxApp.view.fragments.EditDetails",
+					controller: oController
 				}).then(function(oFragment) {
-					this.getView().insertContent(oFragment, 0);
+					debugger;
+					// this.byId("gvdPageLayout").add
 				}.bind(this));
 			}
-			
-			oController.oEditPageLayout.then(function() {
-				const oEditPageLayout = this.byId("editPageLayout");
-				oEditPageLayout.setVisible(true);
-			}.bind(this));
 			
 		},
 		

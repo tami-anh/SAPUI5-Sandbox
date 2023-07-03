@@ -7,102 +7,56 @@
 	xmlns:form="sap.ui.layout.form"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:gvd="gvdpl.training.sandboxApp.controls">
-	<ObjectPageLayout id="editPageLayout">
-		<headerTitle>
-			<ObjectPageDynamicHeaderTitle>
-				<expandedHeading>
-					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center" class="sapUiSmallMarginEnd">
-						<m:Title text="Denise Smith" wrapping="true" class="sapUiSmallMarginEnd"/>
-					</m:FlexBox>
-					
-				</expandedHeading>
-				<snappedHeading>
-					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center" class="sapUiSmallMarginEnd">
-						<f:Avatar src="gvdpl/training/sandboxApp/image/avatar.jpg" displaySize="S" displayShape="Circle" class="sapUiSmallMarginEnd" />
-						<m:Title text="Denise Smith" wrapping="true" class="sapUiSmallMarginEnd"/>
-					</m:FlexBox>
-				</snappedHeading>
-				
-				<navigationActions>
-					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" tooltip="Enter Full Screen Mode" visible="{= ${ScreenModeModel>/isFullScreen} === false}"/>
-					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" tooltip="Exit Full Screen Mode" visible="{= ${ScreenModeModel>/isFullScreen} === true}"/>
-					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close column" visible="true"/>
-				</navigationActions>
-				
-				<actions>
-					<m:Button text="Edit" type="Emphasized" press="toggleAreaPriority"/>
-				</actions>
-				
-			</ObjectPageDynamicHeaderTitle>
-		</headerTitle>
-		<headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch" >
-				<f:Avatar src="gvdpl/training/sandboxApp/image/avatar.jpg" displaySize="L" displayShape="Circle" class="sapUiSmallMarginEnd" />
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
-					<m:Label text="{i18n>empId}"/>
-					<m:Text id="pernrText" text="{MainModel>Pernr}"/>
-				</m:VBox>
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="{i18n>empDateOfBirth}"/>
-					<m:Text text="abc"/>
-				</m:VBox>
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="{i18n>empPlaceOfBirth}"/>
-					<m:Text text="abc"/>
-				</m:VBox>
-			</m:FlexBox>
-		</headerContent>
-		<sections>
-			<ObjectPageSection title="IT0006">
-				<subSections>
-					<ObjectPageSubSection>
-						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
-								<m:Label text="{i18n>empAddress}" design="Bold"/>
-								<m:Input value="{DetailsModel>/Address}" />
-								<m:Label text="{i18n>empPostCode}" design="Bold"/>
-								<m:Input text="{DetailsModel>/KodPocztowy}"/>
-								<m:Label text="{i18n>empPostSpot}" design="Bold"/>
-								<m:Input text="{DetailsModel>/MiejscPoczt}"/>
-							</form:SimpleForm>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection title="IT0016">
-				<subSections>
-					<ObjectPageSubSection>
-						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
-								<m:Label text="{i18n>empContractType}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>
-								<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/DataZawUmow', formatter: '.formatter.formatDate'}"/>
-								<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/DataKonUmow', formatter: '.formatter.formatDate'}"/>
-							</form:SimpleForm>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-			<ObjectPageSection title="IT0022">
-				<subSections>
-					<ObjectPageSubSection>
-						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
-								<m:Label text="{i18n>empEducation}" design="Bold"/>
-								<m:Text text="{DetailsModel>/WyksztalcenieTxt}"/>
-								<m:Label text="{i18n>empUniversityName}" design="Bold"/>
-								<m:Text text="{DetailsModel>/NazwaSzkoly}"/>
-								<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/DataUkonSzkol', formatter: '.formatter.formatDate'}"/>
-								<m:Label text="{i18n>empMajor}" design="Bold"/>
-								<m:Text text="{DetailsModel>/KierunNaukTxt}"/>
-							</form:SimpleForm>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-		</sections>
-	</ObjectPageLayout>
+
+		<ObjectPageSection title="IT0006">
+			<subSections>
+				<ObjectPageSubSection>
+					<blocks>
+						<form:SimpleForm editable="false" layout="ColumnLayout">
+							<m:Label text="{i18n>empAddress}" design="Bold"/>
+							<m:Input value="{DetailsModel>/Address}" />
+							<m:Label text="{i18n>empPostCode}" design="Bold"/>
+							<m:Input value="{DetailsModel>/KodPocztowy}"/>
+							<m:Label text="{i18n>empPostSpot}" design="Bold"/>
+							<m:Input value="{DetailsModel>/MiejscPoczt}"/>
+						</form:SimpleForm>
+					</blocks>
+				</ObjectPageSubSection>
+			</subSections>
+		</ObjectPageSection>
+		<ObjectPageSection title="IT0016">
+			<subSections>
+				<ObjectPageSubSection>
+					<blocks>
+						<form:SimpleForm editable="false" layout="ColumnLayout">
+							<m:Label text="{i18n>empContractType}" design="Bold"/>
+							<m:Input value="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>
+							<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
+							<m:Input value="{path: 'DetailsModel>/DataZawUmow', formatter: '.formatter.formatDate'}"/>
+							<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
+							<m:Input value="{path: 'DetailsModel>/DataKonUmow', formatter: '.formatter.formatDate'}"/>
+						</form:SimpleForm>
+					</blocks>
+				</ObjectPageSubSection>
+			</subSections>
+		</ObjectPageSection>
+		<ObjectPageSection title="IT0022">
+			<subSections>
+				<ObjectPageSubSection>
+					<blocks>
+						<form:SimpleForm editable="false" layout="ColumnLayout">
+							<m:Label text="{i18n>empEducation}" design="Bold"/>
+							<m:Input value="{DetailsModel>/WyksztalcenieTxt}"/>
+							<m:Label text="{i18n>empUniversityName}" design="Bold"/>
+							<m:Input value="{DetailsModel>/NazwaSzkoly}"/>
+							<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>
+							<m:Input value="{path: 'DetailsModel>/DataUkonSzkol', formatter: '.formatter.formatDate'}"/>
+							<m:Label text="{i18n>empMajor}" design="Bold"/>
+							<m:Input value="{DetailsModel>/KierunNaukTxt}"/>
+						</form:SimpleForm>
+					</blocks>
+				</ObjectPageSubSection>
+			</subSections>
+		</ObjectPageSection>
+
 </core:FragmentDefinition>
