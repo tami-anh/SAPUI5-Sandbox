@@ -20,8 +20,8 @@ sap.ui.define([
 			}
 		},
 		
-		_get_Text: function (){ 	return this.getAggregation("_Text");	},
-		_get_Input: function(){ 	return this.getAggregation("_Input");	},
+		_get_Text: function () { 	return this.getAggregation("_Text");	},
+		_get_Input: function () { 	return this.getAggregation("_Input");	},
 		
 		init: function () {
 		},

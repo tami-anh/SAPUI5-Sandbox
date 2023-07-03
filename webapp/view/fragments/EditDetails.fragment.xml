@@ -1,14 +1,13 @@
-<mvc:View xmlns:core="sap.ui.core"
-	xmlns:mvc="sap.ui.core.mvc"
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
 	xmlns:m="sap.m"
 	xmlns:f="sap.f"
 	xmlns="sap.uxap"
 	xmlns:layout="sap.ui.layout"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:gvd="gvdpl.training.sandboxApp.controls"
-	controllerName="gvdpl.training.sandboxApp.controller.Detail">
-	<ObjectPageLayout id="displayPageLayout">
+	xmlns:gvd="gvdpl.training.sandboxApp.controls">
+	<ObjectPageLayout id="editPageLayout">
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
@@ -31,17 +30,13 @@
 				</navigationActions>
 				
 				<actions>
-					<m:Button text="Edit" type="Emphasized" press="onEditModePressAsync"/>
+					<m:Button text="Edit" type="Emphasized" press="toggleAreaPriority"/>
 				</actions>
 				
 			</ObjectPageDynamicHeaderTitle>
-			<!--<ObjectPageHeader objectImageURI="{value: 'gvdpl/training/sandboxApp/image/avatar.jpg', formatter: 'sap.ui.require.toUrl'}"-->
-			<!--	objectTitle="Denise Smith" objectImageShape="Circle" objectImageAlt="Denise Smith" objectSubtitle="Senior UI Developer"-->
-			<!--	isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true">-->
-			<!--</ObjectPageHeader>-->
 		</headerTitle>
 		<headerContent>
-			<m:FlexBox id="gvdFlexBox" wrap="Wrap" fitContainer="true" alignItems="Stretch" >
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch" >
 				<f:Avatar src="gvdpl/training/sandboxApp/image/avatar.jpg" displaySize="L" displayShape="Circle" class="sapUiSmallMarginEnd" />
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
 					<m:Label text="{i18n>empId}"/>
@@ -64,11 +59,11 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empAddress}" design="Bold"/>
-								<m:Text value="{DetailsModel>/Address}" />
+								<m:Input value="{DetailsModel>/Address}" />
 								<m:Label text="{i18n>empPostCode}" design="Bold"/>
-								<m:Text text="{DetailsModel>/KodPocztowy}"/>
+								<m:Input text="{DetailsModel>/KodPocztowy}"/>
 								<m:Label text="{i18n>empPostSpot}" design="Bold"/>
-								<m:Text text="{DetailsModel>/MiejscPoczt}"/>
+								<m:Input text="{DetailsModel>/MiejscPoczt}"/>
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>
@@ -110,4 +105,4 @@
 			</ObjectPageSection>
 		</sections>
 	</ObjectPageLayout>
-</mvc:View>
+</core:FragmentDefinition>
