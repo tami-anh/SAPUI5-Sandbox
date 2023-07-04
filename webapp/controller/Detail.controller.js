@@ -15,9 +15,10 @@ sap.ui.define([
 			this.oRouter.getRoute("detail").attachPatternMatched(this._handleRouteMatched, this);
 		},
 		
-		onEditModePressAsync: async function() {
+		onEditPressAsync: async function() {
 			const oController = this;
 			const oPageLayout = oController.byId("gvdPageLayout");
+			const oEditModeModel = Models.getEditModeModel();
 			
 			if(!oController.oEditPageLayout) {
 				oController.oEditPageLayout = await Fragment.load({
@@ -25,16 +26,35 @@ sap.ui.define([
 					controller: oController
 				});
 				
-				oPageLayout.removeAllSections();
 				oPageLayout.addSection(oController.oEditPageLayout);
-				
-				// .then(function(oFragment) {
-				// 	const oPageLayout = this.byId("gvdPageLayout");
-				// 	oPageLayout.removeSections();
-				// 	oPageLayout.addSection(oFragment);
-				// }.bind(this));
 			}
 			
+			oEditModeModel.setProperty("/isEditMode", true);
+			oController.byId("displaySection").setVisible(false);
+			//oController.byId("editSection").setVisible(true);
+			oController.oEditPageLayout.setVisible(true);
+		},
+		
+		onSavePressAsync: function() {
+			const oController = this;
+			const oPageLayout = oController.byId("gvdPageLayout");
+			const oEditModeModel = Models.getEditModeModel();
+			
+			oEditModeModel.setProperty("/isEditMode", false);
+			oController.byId("displaySection").setVisible(true);
+			//oController.byId("editSection").setVisible(false);
+			oController.oEditPageLayout.setVisible(false);
+		},
+		
+		onCancelPressAsync: function() {
+			const oController = this;
+			const oPageLayout = oController.byId("gvdPageLayout");
+			const oEditModeModel = Models.getEditModeModel();
+			
+			oEditModeModel.setProperty("/isEditMode", false);
+			oController.byId("displaySection").setVisible(true);
+			//oController.byId("editSection").setVisible(false);
+			oController.oEditPageLayout.setVisible(false);
 		},
 		
 		handleClose: function () {

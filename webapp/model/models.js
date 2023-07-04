@@ -14,6 +14,7 @@ sap.ui.define([
 			this._createLayoutModel();
 			this._createDetailsModel();
 			this._createScreenModeModel();
+			this._createEditModeModel();
 		},
 		
 		downloadMainModel: async function() {
@@ -62,6 +63,13 @@ sap.ui.define([
 			this.getComponent().setModel(oModel, "ScreenModeModel");
 		},
 		
+		_createEditModeModel: function() {
+			const oModel = new JSONModel({
+				isEditMode: false
+			});                    
+			this.getComponent().setModel(oModel, "EditModeModel");
+		},
+		
 		// GETTERS AND SETTERS
 		getMainModel: function() {
 			return this.getComponent().getModel("MainModel");
@@ -73,6 +81,10 @@ sap.ui.define([
 		
 		getScreenModeModel: function() {
 			return this.getComponent().getModel("ScreenModeModel");
+		},
+		
+		getEditModeModel: function() {
+			return this.getComponent().getModel("EditModeModel");
 		},
 		
 		// setMainModel: function(oMainModel) {

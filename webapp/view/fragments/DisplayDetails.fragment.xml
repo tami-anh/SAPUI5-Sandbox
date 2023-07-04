@@ -6,7 +6,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:form="sap.ui.layout.form">
 
-		<ObjectPageSection>
+		<ObjectPageSection id="displaySection">
 				<subSections>
 					<ObjectPageSubSection title="IT0006">
 						<blocks>
