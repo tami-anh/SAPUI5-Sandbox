@@ -10,7 +10,7 @@
 				<subSections>
 					<ObjectPageSubSection title="IT0006">
 						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
+							<form:SimpleForm editable="true" layout="ColumnLayout">
 								<m:Label text="{i18n>empAddress}" design="Bold"/>
 								<m:Input value="{DetailsModel>/Address}" />
 								<m:Label text="{i18n>empPostCode}" design="Bold"/>
@@ -22,7 +22,7 @@
 					</ObjectPageSubSection>
 					<ObjectPageSubSection title="IT0016">
 						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
+							<form:SimpleForm editable="true" layout="ColumnLayout">
 								<m:Label text="{i18n>empContractType}" design="Bold"/>
 								<m:Input value="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>
 								<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
@@ -34,7 +34,7 @@
 					</ObjectPageSubSection>
 					<ObjectPageSubSection title="IT0022">
 						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
+							<form:SimpleForm editable="true" layout="ColumnLayout">
 								<m:Label text="{i18n>empEducation}" design="Bold"/>
 								<m:Input value="{DetailsModel>/WyksztalcenieTxt}"/>
 								<m:Label text="{i18n>empUniversityName}" design="Bold"/>

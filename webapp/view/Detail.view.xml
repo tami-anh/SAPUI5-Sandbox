@@ -31,7 +31,9 @@
 				</navigationActions>
 				
 				<actions>
-					<m:Button text="Edit" type="Emphasized" press="onEditModePress"/>
+					<m:Button text="{i18n>edit}" type="Emphasized" press="onEditModePressAsync"/>
+					<m:Button text="{i18n>save}" type="Emphasized" press="onEditModePressAsync"/>
+					<m:Button text="{i18n>cancel}" type="" press="onEditModePressAsync"/>
 				</actions>
 				
 			</ObjectPageDynamicHeaderTitle>
