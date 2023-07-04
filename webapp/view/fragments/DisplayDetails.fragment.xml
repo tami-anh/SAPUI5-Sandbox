@@ -12,11 +12,11 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empAddress}" design="Bold"/>
-								<m:Input value="{DetailsModel>/Address}" />
+								<m:Text text="{DetailsModel>/Address}" />
 								<m:Label text="{i18n>empPostCode}" design="Bold"/>
-								<m:Input value="{DetailsModel>/KodPocztowy}"/>
+								<m:Text text="{DetailsModel>/KodPocztowy}"/>
 								<m:Label text="{i18n>empPostSpot}" design="Bold"/>
-								<m:Input value="{DetailsModel>/MiejscPoczt}"/>
+								<m:Text text="{DetailsModel>/MiejscPoczt}"/>
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>
@@ -24,11 +24,11 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empContractType}" design="Bold"/>
-								<m:Input value="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>
+								<m:Text text="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>
 								<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
-								<m:Input value="{path: 'DetailsModel>/DataZawUmow', formatter: '.formatter.formatDate'}"/>
+								<m:Text text="{path: 'DetailsModel>/DataZawUmow', formatter: '.formatter.formatDate'}"/>
 								<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
-								<m:Input value="{path: 'DetailsModel>/DataKonUmow', formatter: '.formatter.formatDate'}"/>
+								<m:Text text="{path: 'DetailsModel>/DataKonUmow', formatter: '.formatter.formatDate'}"/>
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>
@@ -36,13 +36,13 @@
 						<blocks>
 							<form:SimpleForm editable="false" layout="ColumnLayout">
 								<m:Label text="{i18n>empEducation}" design="Bold"/>
-								<m:Input value="{DetailsModel>/WyksztalcenieTxt}"/>
+								<m:Text text="{DetailsModel>/WyksztalcenieTxt}"/>
 								<m:Label text="{i18n>empUniversityName}" design="Bold"/>
-								<m:Input value="{DetailsModel>/NazwaSzkoly}"/>
+								<m:Text text="{DetailsModel>/NazwaSzkoly}"/>
 								<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>
-								<m:Input value="{path: 'DetailsModel>/DataUkonSzkol', formatter: '.formatter.formatDate'}"/>
+								<m:Text text="{path: 'DetailsModel>/DataUkonSzkol', formatter: '.formatter.formatDate'}"/>
 								<m:Label text="{i18n>empMajor}" design="Bold"/>
-								<m:Input value="{DetailsModel>/KierunNaukTxt}"/>
+								<m:Text text="{DetailsModel>/KierunNaukTxt}"/>
 							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>

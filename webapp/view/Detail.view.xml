@@ -1,4 +1,5 @@
-<mvc:View xmlns:core="sap.ui.core"
+<mvc:View 
+	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:m="sap.m"
 	xmlns:f="sap.f"
@@ -6,7 +7,6 @@
 	xmlns:layout="sap.ui.layout"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:gvd="gvdpl.training.sandboxApp.controls"
 	controllerName="gvdpl.training.sandboxApp.controller.Detail">
 	<ObjectPageLayout id="gvdPageLayout">
 		<headerTitle>
@@ -58,48 +58,7 @@
 			</m:FlexBox>
 		</headerContent>
 		<sections>
-			<ObjectPageSection>
-				<subSections>
-					<ObjectPageSubSection title="IT0006">
-						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
-								<m:Label text="{i18n>empAddress}" design="Bold"/>
-								<m:Text value="{DetailsModel>/Address}" />
-								<m:Label text="{i18n>empPostCode}" design="Bold"/>
-								<m:Text text="{DetailsModel>/KodPocztowy}"/>
-								<m:Label text="{i18n>empPostSpot}" design="Bold"/>
-								<m:Text text="{DetailsModel>/MiejscPoczt}"/>
-							</form:SimpleForm>
-						</blocks>
-					</ObjectPageSubSection>
-					<ObjectPageSubSection title="IT0016">
-						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
-								<m:Label text="{i18n>empContractType}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/RodzajUmowyTxt', formatter: '.formatter.formatContract'}"/>
-								<m:Label text="{i18n>empContractDateFrom}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/DataZawUmow', formatter: '.formatter.formatDate'}"/>
-								<m:Label text="{i18n>empContractDateTo}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/DataKonUmow', formatter: '.formatter.formatDate'}"/>
-							</form:SimpleForm>
-						</blocks>
-					</ObjectPageSubSection>
-					<ObjectPageSubSection title="IT0022">
-						<blocks>
-							<form:SimpleForm editable="false" layout="ColumnLayout">
-								<m:Label text="{i18n>empEducation}" design="Bold"/>
-								<m:Text text="{DetailsModel>/WyksztalcenieTxt}"/>
-								<m:Label text="{i18n>empUniversityName}" design="Bold"/>
-								<m:Text text="{DetailsModel>/NazwaSzkoly}"/>
-								<m:Label text="{i18n>empEducationFinishDate}" design="Bold"/>
-								<m:Text text="{path: 'DetailsModel>/DataUkonSzkol', formatter: '.formatter.formatDate'}"/>
-								<m:Label text="{i18n>empMajor}" design="Bold"/>
-								<m:Text text="{DetailsModel>/KierunNaukTxt}"/>
-							</form:SimpleForm>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>	
+			<core:Fragment fragmentName="gvdpl.training.sandboxApp.view.fragments.DisplayDetails" type="XML" />
 			<!--<ObjectPageSection title="IT0016">-->
 			<!--	<subSections>-->
 			<!--		<ObjectPageSubSection>-->
