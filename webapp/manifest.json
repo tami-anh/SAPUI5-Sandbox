@@ -68,13 +68,16 @@
 		},
 		"routing": {
 			"config": {
-				"routerClass": "sap.f.routing.Router",
+				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
 				"viewPath": "gvdpl.training.sandboxApp.view",
 				"controlAggregation": "beginColumnPages",
 				"controlId": "fcl",
-				"clearControlAggregation": false
+				"clearControlAggregation": false,
+				"bypassed": {
+	               "target": "notFound"
+	            }
 			},
 			"routes": [
 				{
@@ -103,7 +106,12 @@
 					"viewType": "XML",
 					"viewName": "Detail",
 					"controlAggregation": "midColumnPages"
-				}
+				},
+				"notFound": {
+	               "viewId": "notFound",
+	               "viewName": "NotFound",
+	               "transition": "show"
+	            }
 			}
 		}
 	}

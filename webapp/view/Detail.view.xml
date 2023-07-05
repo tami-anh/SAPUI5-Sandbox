@@ -51,11 +51,11 @@
 				</m:VBox>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 					<m:Label text="{i18n>empDateOfBirth}"/>
-					<m:Text text="abc"/>
+					<m:Text text="{DetailsModel>/DataUro}"/>
 				</m:VBox>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 					<m:Label text="{i18n>empPlaceOfBirth}"/>
-					<m:Text text="abc"/>
+					<m:Text text="{DetailsModel>/MiejscUro}"/>
 				</m:VBox>
 			</m:FlexBox>
 		</headerContent>
