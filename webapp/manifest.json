@@ -68,7 +68,7 @@
 		},
 		"routing": {
 			"config": {
-				"routerClass": "sap.m.routing.Router",
+				"routerClass": "sap.f.routing.Router",
 				"viewType": "XML",
 				"async": true,
 				"viewPath": "gvdpl.training.sandboxApp.view",

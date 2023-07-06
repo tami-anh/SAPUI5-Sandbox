@@ -14,7 +14,6 @@ sap.ui.define([
 		},
 
 		onNavBack: function() {
-			const oLayoutModel = Models.getLayoutModel();
 			var oHistory, sPreviousHash;
 
 			oHistory = History.getInstance();
@@ -24,7 +23,10 @@ sap.ui.define([
 				window.history.go(-1);
 			} else {
 				this.getRouter().navTo("master", {}, true /*no history*/);
+				const oLayoutModel = Models.getLayoutModel();
 				oLayoutModel.setProperty("/layout", "OneColumn");
+				
+
 			}
 		}
 
