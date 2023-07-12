@@ -40,6 +40,8 @@ sap.ui.define([
 			const oPageLayout = oController.byId("gvdPageLayout");
 			const oEditModeModel = Models.getEditModeModel();
 			
+			oController.sendToBackendAsync();
+			
 			oEditModeModel.setProperty("/isEditMode", false);
 			oController.byId("displaySection").setVisible(true);
 			//oController.byId("editSection").setVisible(false);
@@ -55,6 +57,20 @@ sap.ui.define([
 			oController.byId("displaySection").setVisible(true);
 			//oController.byId("editSection").setVisible(false);
 			oController.oEditPageLayout.setVisible(false);
+		},
+		
+		sendToBackendAsync: async function() {
+			const oController = this;
+			const oDetailsModel = Models.getDetailsModel();
+			const sPernr = oDetailsModel.getProperty("/Pernr");
+			let oData = null;
+			
+			try {
+				oData = await Models.uploadDataToBackend(sPernr);
+			} catch(oError) {
+				console.log("Err");
+			}
+			
 		},
 		
 		handleClose: function () {

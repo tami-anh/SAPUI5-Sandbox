@@ -17,6 +17,31 @@ sap.ui.define([
 			this._createEditModeModel();
 		},
 		
+		uploadDataToBackend: function(sPernr) {
+			const oModels = this;
+			let oDataToSend = oModels.gatherDataForSending()
+			DataManager.uploadDataToBackend(sPernr, oDataToSend);           
+		},
+		
+		gatherDataForSending: function() {
+			const oModels = this;
+			const oDetailsModel = oModels.getDetailsModel();
+			let oDataToSend = {
+				Address: oDetailsModel.getProperty("/Address"),
+				KodPocztowy: oDetailsModel.getProperty("/KodPocztowy"),
+				MiejscPoczt: oDetailsModel.getProperty("/MiejscPoczt"),
+				RodzajUmowy: oDetailsModel.getProperty("/RodzajUmowy"),
+				DataZawUmow: oDetailsModel.getProperty("/DataZawUmow"),
+				DataKonUmow: oDetailsModel.getProperty("/DataKonUmow"),
+				Wyksztalcenie: oDetailsModel.getProperty("/Wyksztalcenie"),
+				NazwaSzkoly: oDetailsModel.getProperty("/NazwaSzkoly"),
+				DataUkonSzkol: oDetailsModel.getProperty("/DataUkonSzkol"),
+				KierunNauk: oDetailsModel.getProperty("/KierunNauk")
+			};
+			
+			return oDataToSend;
+		},
+		
 		downloadMainModel: async function() {
 			const oModels = this;
 			const oMainModel = oModels.getMainModel();
