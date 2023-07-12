@@ -33,12 +33,29 @@ sap.ui.define([
 					success: function(oData, oResponse) {
 						resolve(oData);
 					},
-					error: function () {
+					error: function(oError) {
 
 					}
 				});
 			});
-		}
+		},
+		
+		uploadDataToBackend: function(sPernr, oDataToSend) {
+			const sPath = "/DetailsSet('" + sPernr + "')";
+			const sService = "/sap/opu/odata/sap/ZKBU_PROFILE_SRV";
+			const oModel = new ODataModel(sService);
+			
+			return new Promise(function (resolve, reject) {
+				oModel.update(sPath, oDataToSend, {
+					success: function(oData, oResponse) {
+						resolve(oData);
+					},
+					error: function(oError) {
+
+					}
+				});
+			});
+		},
 
 	};
 });
